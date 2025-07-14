@@ -396,7 +396,7 @@ export default function CoachNevyWebsite() {
                   <Trophy className="w-8 h-8 text-yellow-500" />
                   <div>
                     <div className="font-semibold">Rumbie Takawira</div>
-                    <div className="text-gray-600">Professional Golfer</div>
+                    <div className="text-gray-600">Student</div>
                   </div>
                 </div>
                 <div className="flex items-center space-x-4">
