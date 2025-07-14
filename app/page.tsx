@@ -648,12 +648,10 @@ export default function CoachNevyWebsite() {
                   PGA Certified Golf Coach specializing in junior development and personalized instruction in Harare.
                 </p>
                 <div className="flex space-x-4">
-                  <Link href="#" className="text-blue-200 hover:text-white">
-                    Facebook
+                  <Link href="https://www.linkedin.com/in/nevy-milazi-69034a346/?originalSubdomain=zw" className="text-blue-200 hover:text-white">
+                    Linkedin
                   </Link>
-                  <Link href="#" className="text-blue-200 hover:text-white">
-                    Instagram
-                  </Link>
+                
                 </div>
               </div>
 
