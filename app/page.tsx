@@ -25,27 +25,38 @@ import {
 } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
-import { useState } from "react"
+import { useState, useRef, FormEvent } from "react"
+import emailjs from "@emailjs/browser"
+import { public_key, service_id, template_id } from "@/components/email_js"
 
 export default function CoachNevyWebsite() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    skillLevel: "",
-    goals: "",
-  })
+  const [loading,set_loading] = useState<boolean>(false)
+ 
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    })
-  }
+  
+  const form:any =useRef(null)
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    // Handle form submission
-    console.log("Form submitted:", formData)
+  const handleSubmit = (e: FormEvent) => {
+      e.preventDefault();
+    set_loading(true)
+    console.log(e)
+    emailjs
+      .sendForm(service_id, template_id, form.current, {
+        publicKey: public_key,
+      })
+      .then(
+        () => {
+          alert("Message Sent Successfully");
+          form.current.reset()
+        },
+        (error) => {
+          console.log(error)
+          alert("Message Not Sent");
+
+        },
+      ).finally(()=>{
+        set_loading(false)
+      })
   }
 
   const scrollToSection = (sectionId: string) => {
@@ -461,14 +472,13 @@ export default function CoachNevyWebsite() {
               <div>
                 <Card className="p-8">
                   <h3 className="text-2xl font-bold text-blue-600 mb-6">Send a Message</h3>
-                  <form onSubmit={handleSubmit} className="space-y-6">
+                  <form ref={form} onSubmit={handleSubmit} className="space-y-6">
                     <div>
                       <Label htmlFor="name">Full Name</Label>
                       <Input
-                        id="name"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleInputChange}
+                        id="full_name"
+                        name="full_name"
+                       
                         required
                         className="mt-1"
                       />
@@ -480,8 +490,18 @@ export default function CoachNevyWebsite() {
                         id="email"
                         name="email"
                         type="email"
-                        value={formData.email}
-                        onChange={handleInputChange}
+                        
+                        required
+                        className="mt-1"
+                      />
+                    </div>
+                      <div>
+                      <Label htmlFor="phone">Contact Number</Label>
+                      <Input
+                        id="phone"
+                        name="phone"
+                        type="tel"
+                       
                         required
                         className="mt-1"
                       />
@@ -490,10 +510,9 @@ export default function CoachNevyWebsite() {
                     <div>
                       <Label htmlFor="skillLevel">Skill Level</Label>
                       <select
-                        id="skillLevel"
-                        name="skillLevel"
-                        value={formData.skillLevel}
-                        onChange={handleInputChange}
+                        id="skill_level"
+                        name="skill_level"
+                    
                         className="w-full mt-1 p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                         required
                       >
@@ -510,8 +529,7 @@ export default function CoachNevyWebsite() {
                       <Textarea
                         id="goals"
                         name="goals"
-                        value={formData.goals}
-                        onChange={handleInputChange}
+                      
                         placeholder="Tell me about your golf goals and what you'd like to achieve..."
                         className="mt-1"
                         rows={4}
