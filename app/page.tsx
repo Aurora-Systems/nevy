@@ -176,16 +176,23 @@ export default function CoachNevyWebsite() {
       {/* About Section */}
       <section id="about" className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
+          <div className="max-w-6xl mx-auto ">
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+           
+            <div className="text-start mb-16">
               <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">About Coach Nevy</h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                 Building champions through dedication, expertise, and the philosophy: "Stay in the lane, you'll be a
                 champion"
               </p>
             </div>
+               <div className="mb-16">
+                <img src="https://ngratesc.sirv.com/nevy/nevyile.jpg" className="rounded-sm"/>
+              </div>
+                        </div>
 
-            <div className="grid md:grid-cols-2 gap-12 items-center">
+
+            <div className="grid  md:grid-cols-2 gap-12 items-center">
               <div>
                 <video
                   src="https://ngratesc.sirv.com/nevy/File.mp4"
@@ -199,7 +206,7 @@ export default function CoachNevyWebsite() {
                 />
               </div>
 
-              <div className="space-y-6">
+              <div className="space-y-6 ">
                 <div>
                   <h3 className="text-2xl font-bold text-blue-600 mb-4">My Journey</h3>
                   <p className="text-gray-700 leading-relaxed">
