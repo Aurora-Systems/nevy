@@ -593,12 +593,10 @@ export default function CoachNevyWebsite() {
                 <Card className="p-6">
                   <h3 className="text-xl font-bold text-blue-600 mb-4">Follow Me</h3>
                   <div className="flex space-x-4">
-                    <Link href="#" className="text-blue-600 hover:text-blue-800">
-                      Facebook
+                    <Link href="https://www.linkedin.com/in/nevy-milazi-69034a346/?originalSubdomain=zw" className="text-blue-600 hover:text-blue-800">
+                      Linkedin
                     </Link>
-                    <Link href="#" className="text-blue-600 hover:text-blue-800">
-                      Instagram
-                    </Link>
+                
                   </div>
                 </Card>
               </div>
