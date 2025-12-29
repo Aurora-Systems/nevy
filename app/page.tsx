@@ -70,7 +70,7 @@ export default function CoachNevyWebsite() {
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="text-2xl font-bold text-blue-600 rounded-sm rounded-5">
-              <img src="https://ngratesc.sirv.com/nevy/Coach.png" className="rounded-sm"  width={50} alt="logo"/>
+              <img src="https://cdn.clipond.com/nevy/Coach.png" className="rounded-sm"  width={50} alt="logo"/>
             </div>
             <div className="hidden md:flex space-x-6">
               <button
@@ -115,7 +115,7 @@ export default function CoachNevyWebsite() {
       <section id="home" className="relative h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://ngratesc.sirv.com/nevy/pexels-kindelmedia-6572955.jpg?height=1080&width=1920"
+            src="https://cdn.clipond.com/nevy/pexels-kindelmedia-6572955.jpg?height=1080&width=1920"
             alt="Coach Nevy teaching golf"
             fill
             className="object-cover filter grayscale"
@@ -187,7 +187,7 @@ export default function CoachNevyWebsite() {
               </p>
             </div>
                <div className="mb-16">
-                <img src="https://ngratesc.sirv.com/nevy/nevyile.jpg" className="rounded-sm"/>
+                <img src="https://cdn.clipond.com/nevy/nevyile.jpg" className="rounded-sm"/>
               </div>
                         </div>
 
@@ -195,7 +195,7 @@ export default function CoachNevyWebsite() {
             <div className="grid  md:grid-cols-2 gap-12 items-center">
               <div>
                 <video
-                  src="https://ngratesc.sirv.com/nevy/File.mp4"
+                  src="https://cdn.clipond.com/nevy/File.mp4"
                   autoPlay={true}
                   muted={true}
                   loop={true}
